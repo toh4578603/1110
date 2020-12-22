@@ -1,6 +1,6 @@
 # 1110
 
-```c++
+~~~c++
 int x=0;
 void setup() {
   pinMode(3, OUTPUT);
@@ -16,18 +16,17 @@ void setup() {
 
 void loop() {
 
-  if (digitalRead(2)==0)
-  {
-    delay(200);
-    x= x+1;
-  }
+ 
   switch (x)
   {
     case 0 :
-    for (int i=3;i<6;i++)
-    {
-      digitalWrite(i, HIGH);
-    }
+    
+    
+      digitalWrite(3, HIGH);
+      digitalWrite(4, HIGH);
+      digitalWrite(5, HIGH);
+      digitalWrite(6, HIGH);
+    
     break;
     case 1 :
     digitalWrite(3, LOW);
@@ -46,8 +45,13 @@ void loop() {
     digitalWrite(5, HIGH);
     break; 
   }
-  if(x>4)
-  x=1;
+  if (digitalRead(2)==0)
+  {
+    delay(200);
+    x= x+1;
+    if(x>4)
+    x=0;
+  }
 
   }
-```
+~~~
